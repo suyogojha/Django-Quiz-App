@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <script src = "{% static 'js/quiz.js' %}"></script>
+</head>
+
+    <div class="container">
+      <div class="login">
+        <h1>Login</h1>
+        <form method="post" action="/questions/" onsubmit="getName()">
+        {% csrf_token %}
+          <p><input type="text" id="login" value="" placeholder="Username or Email" required></p>
+          <p><input type="password" name="pass" value="" placeholder="Password" required></p>
+          <p class="remember_me">
+            <input type="checkbox" name="rem_me" id="remember_me" checked>
+            <label for="remember_me"><span class="box"></span>Remember me this password</label>
+            </p>
+          <p class="submit"><input type="submit" name="submit" value="Login"></p>
+        </form>
+      </div>
+    </div>
+</html>
